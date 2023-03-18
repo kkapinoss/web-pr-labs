@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    color: rebeccapurple;
+    font-family: Arial;
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(43, 43, 43);
+    color: lightgreen;
+    padding: 10px;
+    font-size: 16pt;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(43, 43, 43);
+    color: lightgreen;
+    font-style: italic;
+    padding: 10px;
+    text-align: right;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
