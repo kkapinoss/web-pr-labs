@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: lightgoldenrodyellow;
     color: rebeccapurple;
     font-family: Arial;
     margin: 0px;
@@ -22,6 +22,21 @@ footer {
 }
 
 a {
-    color: green;
-    text-decoration: none;
+     
+}
+
+a:visited {
+    color: lightslategray;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    background-color: white;
+    font-weight: bold;
+}
+
+a:active {
+    color: purple;
+    background-color: lightgreen;
 }
