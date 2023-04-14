@@ -13,12 +13,46 @@ header {
     text-align: center;
 }
 
+header:hover {
+    background-image: linear-gradient(to right,rgb(105, 0, 241), rgb(119, 29, 113));
+    color: gray;
+    padding: 10px;
+    padding: 10px;
+    font-size: 14pt; 
+}
+
+header:active {
+    background-image: linear-gradient(to right,rgb(105, 0, 241), rgb(119, 29, 113));
+    color: white;
+    padding: 10px;
+    padding: 10px;
+    font-size: 30pt; 
+}
+
 footer {
     background: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple);
     color: black;
     font-style: italic;
     padding: 10px;
     text-align: right;
+}
+
+footer:hover {
+    background-image: linear-gradient(to right,rgb(105, 0, 241), rgb(119, 29, 113));
+    color: gray;
+    padding: 10px;
+    padding: 10px;
+    font-size: 14pt;
+    font-style: italic;
+    text-align: right;
+}
+
+footer:active {
+    background-image: linear-gradient(to right,rgb(105, 0, 241), rgb(119, 29, 113));
+    color: white;
+    padding: 10px;
+    padding: 10px;
+    font-size: 30pt; 
 }
 
 a {
