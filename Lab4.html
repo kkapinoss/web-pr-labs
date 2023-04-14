@@ -16,6 +16,22 @@
             height: 250px;
             overflow-y: auto;
             overflow-x: hidden;
+            position: relative;
+            background-color: lightblue;
+        }
+
+        .second {
+            /*z-index: -1;*/
+            left: 380px;
+            top: 120px;
+            position: fixed;
+        }
+
+        .second:hover{
+            z-index: 1;
+            top: 60px;
+            left: 320px;
+            background: rgb(182, 149, 216);
         }
     </style>
 </head>
@@ -32,7 +48,7 @@
         опасности – поджога – страховать дома на меньшую сумму, чем они стоили.
         </div>
 
-        <div>
+        <div class="second">
         Пришлось завести статистику потерь, чтобы знать, как часто дома сгорают. Для 
         страхования жизни придумали актуарные таблицы, тут требуется серьёзный сбор 
         статистики. Подсчитали, сколько в среднем может прожить человек определённого возраста.
