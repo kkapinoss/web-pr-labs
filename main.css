@@ -6,16 +6,16 @@ body {
 }
 
 header {
-    background-color: rgb(43, 43, 43);
-    color: lightgreen;
+    background: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple);
+    color: black;
     padding: 10px;
     font-size: 16pt;
     text-align: center;
 }
 
 footer {
-    background-color: rgb(43, 43, 43);
-    color: lightgreen;
+    background: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple);
+    color: black;
     font-style: italic;
     padding: 10px;
     text-align: right;
