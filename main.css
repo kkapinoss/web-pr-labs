@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple);
-    color: black;
+    background: linear-gradient(to right, rgb(63, 63, 63), black);
+    color: lightgreen;
     padding: 10px;
     font-size: 16pt;
     text-align: center;
@@ -30,8 +30,8 @@ header:active {
 }
 
 footer {
-    background: linear-gradient(to right bottom, red, orange, yellow, green, lightblue, blue, purple);
-    color: black;
+    background: linear-gradient(to right bottom, rgb(63, 63, 63), black);
+    color: lightgreen;
     font-style: italic;
     padding: 10px;
     text-align: right;
