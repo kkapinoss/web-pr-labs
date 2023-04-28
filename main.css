@@ -29,6 +29,10 @@ header:active {
     font-size: 30pt; 
 }
 
+main {
+    margin: 10px 20px;
+}
+
 footer {
     background: linear-gradient(to right bottom, rgb(63, 63, 63), black);
     color: lightgreen;
