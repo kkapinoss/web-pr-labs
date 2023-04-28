@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Капинос Даниил Дмитриевич. Лабораторная №5</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+        function showSum() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + ' равна' + result);
+        }
+
+    </script>
+    <style>
+        .message {
+            width: 300px;
+            height: 50px;
+            background-color: rgb(43, 43, 43);
+            border: 1px solid;
+            border-color: lightgreen;
+            display: inline-block;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16pt;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,7 +35,8 @@
     </header>
 
     <main>
-
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
     </main>
 
     <footer>
