@@ -17,9 +17,42 @@
             alert('Сумма ' + a + ' и ' + b + ' равна' + result);
         }
 
+        function showMin() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt (inputA.value);
+            let b = parseInt (inputB.value);
+            let result = a - b;
+            alert('Разность ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showUmn() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt (inputA.value);
+            let b = parseInt (inputB.value);
+            let result = a * b;
+            alert('Произведение ' + a + ' и ' + b + ' равна ' + result);
+        }
+        function showDel() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let a = parseInt (inputA.value);
+            let b = parseInt (inputB.value);
+            let result = a / b;
+            alert('Деление ' + a + ' и ' + b + ' равна ' + result);
+        }
+
         function showAuthor() {
             let author = 'Автор страницы:\nКапинос Даниил Дмитриевич\n"Средний человек озабочен тем, как бы ему убить время,\nчеловек же талантливый стремится его использовать"';
             alert(author);
+        }
+
+        function changeOutput(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor; // или '#9370DB'
+            output.style.color = textColor;
+            output.style.borderColor = borderColor;
         }
 
     </script>
@@ -35,6 +68,12 @@
             text-align: center;
             font-size: 16pt;
         }
+
+        #output {
+            border: 3px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -45,8 +84,21 @@
     <main>
         <label>Первое число: <input type="number" value="0" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="0" id="numberB"></label><br>
+
         <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showMin()">Найти разность чисел</div>
+        <div class="message" onclick="showUmn()">Найти произведение числел</div>
+        <div class="message" onclick="showDel()">Найти деление чисел</div>
         <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'rgb(43, 43, 43)', 'lightgreen', 'indigo')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'rgb(43, 43, 43)', 'lightgreen', 'darkslateblue')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'rgb(43, 43, 43)', 'lightgreen', 'rebeccapurple')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'rgb(43, 43, 43)', 'lightgreen', 'purple')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer onclick="showAuthor()">
