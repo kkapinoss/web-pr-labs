@@ -66,21 +66,22 @@
             let f = parseInt (inputF.value);
             let result = (c*100) + (d*80) + (e*150) + (f*300);
             let output = document.getElementById('output2');
-            output.innerHTML = 'Итоговая сумма покупки:'+ ' ' + result + ' ' +'&#8381';
+            output.innerHTML = 'Общая сумма:'+ ' ' + result + ' ' +'&#8381';
         }
 
     </script>
     <style>
-        .message {
+         .message {
             width: 300px;
-            height: 50px;
+            height: 60px;
             background-color: rgb(43, 43, 43);
-            border: 3px solid;
-            border-color: lightgreen;
+            border: 2px solid;
+            border-color: rgb(31, 31, 31);
             display: inline-block;
             cursor: pointer;
-            text-align: center;
             font-size: 16pt;
+            text-align: center;
+            color: cornsilk; 
         }
 
         #output {
@@ -89,14 +90,26 @@
             height: 40px;
         }
 
+        #output2 {
+            width: 300px;
+            height: 40px;
+            font-size: larger;
+        }
+
         .border {
             border: 3px solid;
             width: 280px;
             height: 300px;
             background-color: rgb(43, 43, 43);
-            color: lightgreen;
+            color: cornsilk;
+            border-color: rgb(31, 31, 31);
             margin-top: 30px;
             padding: 5px;
+        }
+
+        .name {
+            color:cornsilk;
+            font-size: xx-large;
         }
     </style>
 </head>
@@ -130,10 +143,9 @@
             <label>Груши (80р/шт): <input type="number" value="0" id="numberD"></label><br>
             <label>Апельсины (150р/шт): <input type="number" value="0" id="numberE"></label><br>
             <label>Дыни (300р/шт): <input type="number" value="0" id="numberF"></label><br>
-            <input type="button" value="Рассчитать" onclick="showsumkorzina()">         
-        </div>
-
-        <div id="output2"></div>  
+            <input type="button" value="Рассчитать" onclick="showSumKor()">
+            <div id="output2"></div>         
+        </div> 
 
     </main>
 
