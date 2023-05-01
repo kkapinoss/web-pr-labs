@@ -69,6 +69,13 @@
             output.innerHTML = 'Общая сумма:'+ ' ' + result + ' ' +'&#8381';
         }
 
+        function removeCircle(circle) {
+            circle.style.height = '0';
+            circle.style.width = '0';
+            circle.style.fontSize = '0';
+            circle.style.WebkitTransform = "scale(-2,-2)";
+        }
+
     </script>
     <style>
          .message {
@@ -111,6 +118,61 @@
             color:cornsilk;
             font-size: xx-large;
         }
+
+        .circle {
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			text-align: center;
+			font-size: 24px;
+			line-height: 100px;
+			margin-right: 20px;
+			color: #ffffff;
+			font-weight: bold;
+            margin-top: 30px;
+            transition: 3s;
+		}
+
+		.circle-1 {
+			background-color: rgb(33, 33, 33);
+		}
+
+		.circle-2 {
+			background-color: rgb(21, 0, 114);
+		}
+
+		.circle-3 {
+			background-color: darkslateblue;
+		}
+
+		.circle-4 {
+			background-color: rgb(72, 0, 0);
+		}
+
+		.circle-5 {
+			background-color: darkmagenta;
+		}
+
+		.circle-6 {
+			background-color: rgb(0, 51, 8);
+		}
+
+		.circle-7 {
+			background-color: rgb(24, 24, 24);
+		}
+
+		.circle-8 {
+			background-color: rgb(5, 67, 46);
+		}
+
+		.circle-9 {
+			background-color: blue;
+		}
+
+		.circle-10 {
+			background-color: rgb(13, 42, 42);
+		}
     </style>
 </head>
 <body>
@@ -145,7 +207,18 @@
             <label>Дыни (300р/шт): <input type="number" value="0" id="numberF"></label><br>
             <input type="button" value="Рассчитать" onclick="showSumKor()">
             <div id="output2"></div>         
-        </div> 
+        </div>
+        
+        <div class="circle circle-1" onclick="removeCircle(this)">1</div>
+        <div class="circle circle-2" onclick="removeCircle(this)">2</div>
+        <div class="circle circle-3" onclick="removeCircle(this)">3</div>
+        <div class="circle circle-4" onclick="removeCircle(this)">4</div>
+        <div class="circle circle-5" onclick="removeCircle(this)">5</div>
+        <div class="circle circle-6" onclick="removeCircle(this)">6</div>
+        <div class="circle circle-7" onclick="removeCircle(this)">7</div>
+        <div class="circle circle-8" onclick="removeCircle(this)">8</div>
+        <div class="circle circle-9" onclick="removeCircle(this)">9</div>
+        <div class="circle circle-10" onclick="removeCircle(this)">10</div>
 
     </main>
 
