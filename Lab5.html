@@ -55,13 +55,27 @@
             output.style.borderColor = borderColor;
         }
 
+        function showSumKor() {
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+            let inputF = document.getElementById('numberF');
+            let c = parseInt (inputC.value);
+            let d = parseInt (inputD.value);
+            let e = parseInt (inputE.value);
+            let f = parseInt (inputF.value);
+            let result = (c*100) + (d*80) + (e*150) + (f*300);
+            let output = document.getElementById('output2');
+            output.innerHTML = 'Итоговая сумма покупки:'+ ' ' + result + ' ' +'&#8381';
+        }
+
     </script>
     <style>
         .message {
             width: 300px;
             height: 50px;
             background-color: rgb(43, 43, 43);
-            border: 1px solid;
+            border: 3px solid;
             border-color: lightgreen;
             display: inline-block;
             cursor: pointer;
@@ -73,6 +87,16 @@
             border: 3px solid;
             width: 300px;
             height: 40px;
+        }
+
+        .border {
+            border: 3px solid;
+            width: 280px;
+            height: 300px;
+            background-color: rgb(43, 43, 43);
+            color: lightgreen;
+            margin-top: 30px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -99,6 +123,18 @@
         </div>
 
         <div id="output"></div>
+
+        <div class="border">
+            <div class="name">Корзина товаров</div>
+            <label>Яблоки (100р/шт): <input type="number" value="0" id="numberC"></label><br>
+            <label>Груши (80р/шт): <input type="number" value="0" id="numberD"></label><br>
+            <label>Апельсины (150р/шт): <input type="number" value="0" id="numberE"></label><br>
+            <label>Дыни (300р/шт): <input type="number" value="0" id="numberF"></label><br>
+            <input type="button" value="Рассчитать" onclick="showsumkorzina()">         
+        </div>
+
+        <div id="output2"></div>  
+
     </main>
 
     <footer onclick="showAuthor()">
