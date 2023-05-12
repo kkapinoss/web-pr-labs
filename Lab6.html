@@ -62,6 +62,22 @@
             margin-top: 10px;
             background-color: aliceblue;
         }
+        .shop{
+            border: 2px solid;
+            border-color: black;
+            width: 400px;
+            height: 300px;
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: rgb(43, 43, 43);
+            padding: 20px;
+        }
+        #wear{
+            border: 1px solid;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
     </style>
     <script>
         let number;
@@ -204,6 +220,46 @@
                 size.style.height = '100px';
             }
         }
+         // Функция фильтрации
+         function filter(){
+            // Переменная цвет, берем елемент из wear-color
+            let color = document.getElementById('wear-color').value;
+            // Переменная тип, берем элемент из wear-type
+            let type = document.getElementById('wear-type').value;
+            // Переменная одежда, берем элемент из wear
+            let wear = document.getElementById('wear');
+
+            if(color == 'Красный' && type == 'Футболка'){
+                wear.src = 'https://ulrid.ru/image/cache/catalog/8c9b044b44c311e980f90050569b1703_15dae130458e11e980f90050569b1703-1000x1000.jpg';
+            }
+            else if(color == 'Красный' && type == 'Поло'){
+                wear.src = 'http://vester2013.ru/upload/iblock/1bc/rubashka_polo_krasnyy.jpg';
+            }
+            else if(color == 'Красный' && type == 'Рубашка'){
+                wear.src = 'https://ae01.alicdn.com/kf/H45b7a0970a60423090315e1eec843196e.jpg';
+            }
+            else if(color == 'Черный' && type == 'Футболка'){
+                wear.src = 'https://ae04.alicdn.com/kf/H24f1ce92db214b9189c99c9b480e1630K.jpg';
+            }
+            else if(color == 'Черный' && type == 'Поло'){
+                wear.src = 'https://adventurica.ru/media/product/54238/54238_1.jpg';
+            }
+            else if(color == 'Черный' && type == 'Рубашка'){
+                wear.src = 'https://a.allegroimg.com/original/03f1de/9ff4655d4d029bc97af4b8c8cbf6';
+            }
+            else if(color == 'Белый' && type == 'Футболка'){
+                wear.src = 'https://werd.com/wp-content/uploads/2022/07/sunspel-white-tshirt.jpg';
+            }
+            else if(color == 'Белый' && type == 'Поло'){
+                wear.src = 'https://e-chef.ru/wa-data/public/shop/products/13/68/26813/images/1987/1987.500.png';
+            }
+            else if(color == 'Белый' && type == 'Рубашка'){
+                wear.src = 'https://dostavka247.ru/assets/photos/2019/03/01/item_3466736_1.jpg';
+            }
+            else{
+                wear.src = '';
+            }
+        }
     </script>
 </head>
 <body>
@@ -274,6 +330,28 @@
         <!-- Изменение размера блока -->
         <div class="size" onclick="chSize(this)">
             <span>Увеличь на 50</span>
+        </div>
+
+        <!-- Список одежды -->
+        <div class="shop">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Красный</option>
+                <option>Черный</option>
+                <option>Белый</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Поло</option>
+                <option>Рубашка</option>
+            </select><br>
+
+            <img id="wear">
+
+            <button onclick="filter(this)">Подобрать</button><br>
+            
         </div>
     </main>
 
