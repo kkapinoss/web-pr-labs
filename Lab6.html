@@ -38,6 +38,22 @@
             color: lightgreen;
             text-align: center;
         }
+        .change {
+            border: 2px solid;
+            border-radius: 10%;
+            width: 150px;
+            height: 50px;
+            text-align: center;            
+            cursor: pointer;
+            color: lightgreen;
+            margin-top: 15px;
+            vertical-align: auto;
+            background-color: rgb(43, 43, 43);
+            left: 10px;
+            transition: all 3s;
+            transform: rotate(0);
+            position: relative;
+        }
     </style>
     <script>
         let number;
@@ -145,6 +161,20 @@
                 document.getElementById('colorText-name').innerHTML = 'черный'; 
            }       
         }
+        //Движение блока
+        let isChange = false;
+        function ChPlace(change){
+            if (isChange == false){
+                change.style.left = '90%';
+                change.style.transform = 'rotate(0)';
+                isChange = true;
+            }
+            else{
+                change.style.left = '10px';   
+                change.style.transform = 'rotate(4turn)';
+                isChange = false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -205,6 +235,11 @@
             Цвет границы:<span id="borderColor-name"></span><br>
             Цвет текста:<span id="colorText-name"></span><br>
             Сделайте двойной щелчек, чтобы сменить.
+        </div>
+
+        <!-- Изменение положения блока -->
+        <div class="change" id="changeplace" onclick="ChPlace(this)">
+            <span>Сделай тык</span>
         </div>
     </main>
 
