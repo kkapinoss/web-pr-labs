@@ -68,6 +68,16 @@
             // Очищается блок 'result'
             result.remove();   
         }
+        function showRules(){
+            let screens = document.getElementsByClassName('rules');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function removeRules(){
+            let screens = document.getElementsByClassName('rules');
+            screens[1].style.display = 'none';
+            screens[0].style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -104,6 +114,22 @@
                 <button onclick="again()">Сыграть еще раз</button>
             </div>
         </div>
+
+        <!-- Отображение правил игры -->
+        <div class="rules">
+            <button onclick="showRules()">Показать правила игры</button>
+        </div>
+
+        <!-- Скрытие правил игры -->
+        <div class="rules" style="display: none;">
+            <div>
+                <button onclick="removeRules()">Скрыть правила игры</button><br0>
+                A.Сначала нажмите кнопку "Сыграть в игру"<br>
+                B.Напишите любое число от 1 до 100<br>
+                C.Затем нажмите кнопку "Угадать"<br>
+                D.Если нет экрана с поздравлением, повторите попытку снова с другим числом<br>
+                E.Если захотите сыграть еще раз, нажмите кнопку "Сыграть еще раз"<br>
+            </div>
     </main>
 
     <footer>
