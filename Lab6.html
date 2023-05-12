@@ -54,6 +54,14 @@
             transform: rotate(0);
             position: relative;
         }
+        .size {
+            border: 2px solid;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            margin-top: 10px;
+            background-color: aliceblue;
+        }
     </style>
     <script>
         let number;
@@ -175,6 +183,27 @@
                 isChange = false;
             }
         }
+        //Изменение размера блока
+        function chSize(size){
+            // Переменная берущая ширину из стилей
+            let isSize = parseInt(getComputedStyle(size).width);
+            // Если размер переменной меньше 1000, то прибавить +50px
+            if(isSize < 1000 ){
+                size.style.width = isSize + 50 + 'px';
+            }
+            // В другом случае 100 px
+            else{
+                size.style.width = '100px';
+            }
+            // Переменная берущая высоту из стилей
+            let isHeight = parseInt(getComputedStyle(size).height);
+            if(isHeight < 1000){
+                size.style.height = isSize + 50 + 'px';
+            }
+            else{
+                size.style.height = '100px';
+            }
+        }
     </script>
 </head>
 <body>
@@ -240,6 +269,11 @@
         <!-- Изменение положения блока -->
         <div class="change" id="changeplace" onclick="ChPlace(this)">
             <span>Сделай тык</span>
+        </div>
+
+        <!-- Изменение размера блока -->
+        <div class="size" onclick="chSize(this)">
+            <span>Увеличь на 50</span>
         </div>
     </main>
 
