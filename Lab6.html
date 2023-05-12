@@ -19,6 +19,25 @@
             background-color: rgb(43, 43, 43);
             color: lightgreen;
         }
+        .rules {
+            border: 2px solid;
+            border-color: black;
+            border-radius: 5%;
+            width: 300px;
+            height: auto;
+            background-color: rgb(43, 43, 43);
+            padding: 10px;
+            color: lightgreen;
+        }
+        .color {
+            border: 2px solid;
+            border-color: lightskyblue;
+            width: 300px;
+            height: auto;
+            margin-top: 10px;
+            color: lightgreen;
+            text-align: center;
+        }
     </style>
     <script>
         let number;
@@ -78,6 +97,54 @@
             screens[1].style.display = 'none';
             screens[0].style.display = 'block';
         }
+        //Смена цветов блока
+        function changeColor(div){
+            // Если цвет зеленый, то меняется на фиолетовый
+            if(div.style.backgroundColor == 'green'){
+                div.style.backgroundColor = 'purple';
+                div.style.color = 'white';
+                div.style.borderColor = 'white';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';    
+                document.getElementById('borderColor-name').innerHTML = 'белый'; 
+                document.getElementById('colorText-name').innerHTML = 'белый';
+            }
+            // Если цвет фиолетовый, то меняется на черный
+           else if(div.style.backgroundColor == 'purple'){
+                div.style.backgroundColor = 'black';
+                div.style.color = 'blue';
+                div.style.borderColor = 'blue';
+                document.getElementById('color-name').innerHTML = 'черный'; 
+                document.getElementById('borderColor-name').innerHTML = 'синий'; 
+                document.getElementById('colorText-name').innerHTML = 'синий';
+           }
+           // Если цвет черный, то меняется на оранжевый
+           else if(div.style.backgroundColor == 'black'){
+                div.style.backgroundColor = 'orange';
+                div.style.color = 'black';
+                div.style.borderColor = 'black';
+                document.getElementById('color-name').innerHTML = 'оранжевый'; 
+                document.getElementById('borderColor-name').innerHTML = 'черный'; 
+                document.getElementById('colorText-name').innerHTML = 'черный';
+           }
+           // Если цвет оранжевый, то меняется на синий
+           else if(div.style.backgroundColor == 'orange'){
+                div.style.backgroundColor = 'blue';
+                div.style.color = 'black';
+                div.style.borderColor = 'black';
+                document.getElementById('color-name').innerHTML = 'синий'; 
+                document.getElementById('borderColor-name').innerHTML = 'черный'; 
+                document.getElementById('colorText-name').innerHTML = 'черный';
+           }
+           // Если цвет синий, то меняется на 
+           else{
+                div.style.backgroundColor = 'green';
+                div.style.color = 'black';
+                div.style.borderColor = 'black';
+                document.getElementById('color-name').innerHTML = 'зеленый'; 
+                document.getElementById('borderColor-name').innerHTML = 'черный'; 
+                document.getElementById('colorText-name').innerHTML = 'черный'; 
+           }       
+        }
     </script>
 </head>
 <body>
@@ -123,13 +190,22 @@
         <!-- Скрытие правил игры -->
         <div class="rules" style="display: none;">
             <div>
-                <button onclick="removeRules()">Скрыть правила игры</button><br0>
+                <button onclick="removeRules()">Скрыть правила игры</button><br>
                 A.Сначала нажмите кнопку "Сыграть в игру"<br>
                 B.Напишите любое число от 1 до 100<br>
                 C.Затем нажмите кнопку "Угадать"<br>
                 D.Если нет экрана с поздравлением, повторите попытку снова с другим числом<br>
                 E.Если захотите сыграть еще раз, нажмите кнопку "Сыграть еще раз"<br>
             </div>
+        </div>
+        
+        <!-- Блок смены цвета -->
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет фона:<span id="color-name"></span><br>
+            Цвет границы:<span id="borderColor-name"></span><br>
+            Цвет текста:<span id="colorText-name"></span><br>
+            Сделайте двойной щелчек, чтобы сменить.
+        </div>
     </main>
 
     <footer>
