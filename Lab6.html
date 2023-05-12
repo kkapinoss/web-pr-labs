@@ -6,13 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Капинос Даниил Дмитриевич. Лабораторная №6</title>
     <link rel="stylesheet" href="main.css">
+    <style>
+        .game {
+            border: 2px solid;
+            border-color: black;
+            border-radius: 5%;
+            margin: 10px auto;
+            padding: 10px;
+            width: 300px;
+            height: auto;
+            text-align: center;
+            background-color: rgb(43, 43, 43);
+            color: lightgreen;
+        }
+    </style>
+    <script>
+        let number;
+        let count = 0;
+        function startGame() {
+            number = Math.floor(Math.random() * 100) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+        function guess() {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            // Дополнительная проверка
+            if(userNumber > 100) {
+                message.innerHTML = 'Лимит 100 превышен, введите число меньше';
+            }
+            else if (userNumber < 1) {
+                message.innerHTML = 'Попробуйте ввести число больше 1';
+            }
+            // Основная проверка
+            if(userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+        function again(params) {
+            // Скрывается третий экран, показывается второй
+            let screens = document.getElementsByClassName('game');  
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            // Загадывается новое число
+            number =  Math.floor(Math.random() * 100) + 1; 
+            // Обнуляется число попыток
+            count = 0;
+            // Очищается блок 'result'
+            result.remove();   
+        }
+    </script>
 </head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная №5
     </header>
 
-    <main></main>
+    <main>
+        <div class="game">
+            <button onclick="startGame()">
+                Сыграть в игру
+            </button>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Угадай число!</h1>
+            <div>
+                Задумано число от 1 до 100. Угадайте, какое?<br>
+                <input type="number" value="" min="1" max="100" id="user-number"><br>
+                <button onclick="guess()">Угадать</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <div class="game" style="display: none;">
+            <h1>Поздравляем, вы выиграли!</h1>
+            <div>
+                Задуманное число: <span id="number"></span>
+            </div>
+            <div>
+                Количество попыток: <span id="try-count"></span>
+            </div>
+            <div>
+                <button onclick="again()">Сыграть еще раз</button>
+            </div>
+        </div>
+    </main>
 
     <footer>
         &copy; Даниил Дмитриевич, ФБИ-12, 2 курс, 2023г.
