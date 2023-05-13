@@ -6,13 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Капинос Даниил Дмитриевич. Лабораторная №6</title>
     <link rel="stylesheet" href="main.css">
+    <style></style>
+    <script>
+        function addBlocks() {
+            for(let i = 0; i < 10; i++) {
+                let block = document.createElement('div');
+                block.innerHTML = 'Блок №' + (i+1);
+                
+                let blocks = document.getElementById('blocks');
+                blocks.appendChild(block);
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         НГТУ, ФБ, Лабораторная №5
     </header>
 
-    <main></main>
+    <main>
+        <button onclick="addBlocks()">Создать блоки</button>
+        <div id="blocks"></div>
+    </main>
 
     <footer>
         &copy; Даниил Дмитриевич, ФБИ-12, 2 курс, 2023г.

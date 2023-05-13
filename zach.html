@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капинос Даниил Дмитриевич, ФБИ-12</title>
+    <style>
+        label {
+            border: 2px solid;
+            background-color: aqua;
+        }
+        .Zn {
+            border: 2px solid;
+            border-color: black;
+            background-color: brown;
+            border-radius: 5%;
+        }
+    </style>
+    <script>
+        function Cifra() {
+            let inputA = document.getElementById('NumA');
+            x = parseInt(inputA.value);
+            x1 = parseInt(x/100);
+            y = String(x1);
+            x2 = x - x1 * 100;
+            alert(x2 + y);
+        }
+
+        function Znach() {
+            let XX = document.getElementById('A');
+            let YY = document.getElementById('B');
+            xx = parseInt(XX.value);
+            yy = parseInt(YY.value);
+            if (xx == yy) {
+                alert(xx * xx);
+            }
+            else if (xx > yy) {
+                alert (xx - yy);
+            }
+            else {
+                alert(xx + yy);
+            } 
+        }
+
+        function Bolsh() {
+            let AA = document.getElementById('A');
+            let YY = document.getElementById('B');
+            x = parseFloat(AA.value);
+            y = parseFloat(YY.value);
+            if (x > y) {
+                alert (x);
+            }
+            else {
+                alert (y);
+            }
+
+        }
+        function Arg() {
+            let one =  document.getElementById('NumB');
+            let two =  document.getElementById('NumC');
+            let three =  document.getElementById('NumD');
+
+            let one1 = parseInt(one.value);
+            let two1 = parseInt(two.value);
+            let three1 = parseInt(three.value);
+
+            let ttt=[];
+            for (let i=1; i<=three1; i++){
+                let result = one1+two1*(i-1);
+                ttt.push(result);
+            }
+
+            let output = document.getElementById('otp');
+            alert(ttt);
+
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <label>Введите трехзначное число <input type="number" value="" id="NumA"></label>
+        <input type="button" value="Решить" onclick="Cifra()">
+
+        <div class="Zn">
+            <label>Число A <input type="number" value="" id="A"></label>
+            <label>Число B <input type="number" value="" id="B"></label>
+            <input type="button" value="Решить" onclick="Bolsh()">
+        </div>
+
+        <label>Первое число:<input type="number" value="1" id="NumB"></label><br>
+        <label>Разность:<input type="number" value="2" id="NumC"></label><br>
+        <label>Кол-во элементов:<input type="number" value="3" id="NumD"></label><br>
+        <div>
+            <input type="button" value="Решить" onclick="Arg()">
+            <div id="otp"></div>
+        </div>
+
+    </main>
+</body>
+</html>
