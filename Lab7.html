@@ -9,6 +9,8 @@
     <style>
     </style>
     <script>
+        // Функция создания 10 блоков
+        let isExpanded = false;
         function addBlocks() {
             let blocks = document.getElementById('blocks');
             for(let i = 0; i < 10; i++) {
@@ -19,6 +21,7 @@
             }
         }
 
+        // Функция для расчета курса доллара
         function showExchange() {
             let exchange = [70.5174, 70.1217, 70.0414, 70.3847, 70.5991,
                             70.8924, 71.5763, 72.8949, 72.7923, 73.6307];
@@ -38,6 +41,27 @@
             let average = sum / exchange.length;
             document.getElementById('detail').innerHTML = 'Среднее значение: ' + average;
         }
+
+        // Функция для создания полупрозрачных блоков
+        function addTrBlocks(){
+            let block_tr = document.getElementById('tr-blocks');
+            if (isExpanded == false){
+                for(let i=0; i<10; i++){
+                    let block = document.createElement('div');
+                    let opacity = i/10;
+                    block.style.opacity = opacity;
+                    block_tr.appendChild(block);
+                    block.innerHTML = ('Содержимое блока') + (i + 1);
+                    isExpanded = true;
+                }
+            }
+            else{
+                while(block_tr.firstChild){
+                    block_tr.removeChild(block_tr.firstChild);
+                }
+                isExpanded = false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -46,12 +70,18 @@
     </header>
 
     <main>
+        <!-- Кнопка создания 10 блоков -->
         <button onclick="addBlocks()">Создать блоки</button>
         <div id="blocks"></div>
 
+        <!-- Кнопка отображения курса доллара -->
         <button onclick="showExchange()">Курс доллара</button>
         <table border="1" id="dollar-exchange"></table>
         <div id="detail"></div>
+
+        <!-- Кнопка создания полупрозрачных блоков -->        
+        <button onclick="addTrBlocks()">Создать полупрозрачные блоки</button>
+        <div id="tr-blocks"></div>
     </main>
 
     <footer>
