@@ -147,6 +147,78 @@
             isExpanded = false;
             }
         }
+
+        // Обработчик для расчета катировок акций компании "Яндекс"
+        let stockPrices = [2016.40, 2026.00, 2036.20, 2048.20, 2045.00, 2223.20, 2263.00, 2260.00, 2223.60, 2321.00];
+        let stockDates = ['12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023', '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023', '25.05.2023'];
+
+        function showStockTable() {
+            let table = document.getElementById('stock-table');
+            let sredneeznach = document.getElementById('srednee-znach');
+            let mminimum = document.getElementById('minimum');
+            let mmaximum = document.getElementById('maximum');
+
+            let row = table.insertRow();
+            let dateHeader = row.insertCell();
+            let priceHeader = row.insertCell();
+            let differenceHeader = row.insertCell();
+
+            dateHeader.innerText = 'Дата';
+            priceHeader.innerText = 'Цена акций';
+            differenceHeader.innerText = 'Разница';
+
+            let previousPrice = null;
+
+            if (isExpanded == false){
+                for (let i = 0; i < stockPrices.length; i++) {
+                    let row = table.insertRow();
+                    let dateCell = row.insertCell();
+                    let priceCell = row.insertCell();
+                    let differenceCell = row.insertCell();
+
+                    dateCell.innerText = stockDates[i];
+                    priceCell.innerText = stockPrices[i].toFixed(2);
+
+                    if (previousPrice !== null) {
+                        let difference = stockPrices[i] - previousPrice;
+                        differenceCell.innerText = difference.toFixed(2);
+                    } else {
+                        differenceCell.innerText = '-';
+                    }
+
+                    previousPrice = stockPrices[i];
+                }
+
+                let total = stockPrices.reduce((sum, price) => sum + price, 0);
+                let average = total / stockPrices.length;
+                sredneeznach.innerText = 'Среднее значение стоимости акции: ' + average.toFixed(2);
+
+                let minPrice1 = Math.min(...stockPrices); // поиск наименьшего значение в массиве
+                let maxPrice1 = Math.max(...stockPrices); // поиск наивысшего значения в массиве
+                mminimum.innerText = "Минимальное значение стоимости акции: " + minPrice1.toFixed(2);
+                mmaximum.innerText = "Максимальное значение стоимости акции: " + maxPrice1.toFixed(2);
+                isExpanded = true;
+            }
+            else{
+                while(table.rows.length > 1){
+                    table.deleteRow(1);
+
+                }
+
+                sredneeznach.innerText = '';
+                mminimum.innerText = '';
+                mmaximum.innerText = '';
+
+                let [dateHeader, priceHeader, differenceHeader] = table.rows[0].cells;
+
+                dateHeader.style.display = 'none';
+                priceHeader.style.display = 'none';
+                differenceHeader.style.display = 'none';
+
+                isExpanded = false;
+
+            }
+        }
     </script>
 </head>
 <body>
@@ -176,6 +248,13 @@
         <!-- Кнопка для создания таблицы умножения -->
         <button onclick="UmnTable()">Таблица умножения</button>
         <table id="Umn-table"></table>
+
+        <!-- Кнопка для вывода катировок акций Яндекса -->
+        <button onclick="showStockTable()">Курс акций Яндекса</button>
+        <table id="stock-table"></table>
+        <p id="srednee-znach"></p>
+        <p id="minimum"></p>
+        <p id="maximum"></p>
 
     </main>
 
