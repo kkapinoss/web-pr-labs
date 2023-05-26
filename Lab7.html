@@ -7,6 +7,19 @@
     <title>Капинос Даниил Дмитриевич. Лабораторная №6</title>
     <link rel="stylesheet" href="main.css">
     <style>
+        /* Стили для кругов */
+        .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        }
     </style>
     <script>
         // Функция создания 10 блоков
@@ -62,6 +75,78 @@
                 isExpanded = false;
             }
         }
+
+        // Функция для создания кругов красное/зеленое
+        function NumberInp() {
+            let ccercles = document.getElementById('circles');
+            let NnumInp = document.getElementById('NumInp');
+            ccercles.innerHTML = '';
+            if (NnumInp.value.trim() === '') {
+                NnumInp.value = 5;
+            }
+            let numCircles = parseInt(NnumInp.value);
+            if (isExpanded==false){
+                for (let i = numCircles; i >= 1; i--) {
+                    let circle = document.createElement('div');
+                    circle.classList.add('circle');
+                    circle.innerText = i;
+                    circle.style.backgroundColor = i % 2 === 0 ? 'greenyellow' : 'aqua';
+                    ccercles.appendChild(circle);
+                }
+                isExpanded=true;
+            }
+            else{
+                while(ccercles.firstChild){
+                    ccercles.removeChild(ccercles.firstChild);
+                }
+                isExpanded = false;
+            }
+        }
+
+        // Таблица умножения на 106
+        function UmnTable() {
+            let lastDigits = 96;
+            let number = lastDigits + 10;
+
+            let table = document.getElementById('Umn-table');
+            table.innerHTML = '';
+            if (isExpanded == false){
+                for (let i = 13; i <= 33; i++) {
+                    let row = document.createElement('tr');
+                    let umnozh = i * number;
+
+                    let cell1 = document.createElement('td');
+                    cell1.innerText = i;
+
+                    let cell2 = document.createElement('td');
+                    cell2.innerText = 'x';
+
+                    let cell3 = document.createElement('td');
+                    cell3.innerText = number;
+
+                    let cell4 = document.createElement('td');
+                    cell4.innerText = '=';
+
+                    let cell5 = document.createElement('td');
+                    cell5.innerText = umnozh;
+
+                    row.appendChild(cell1);
+                    row.appendChild(cell2);
+                    row.appendChild(cell3);
+                    row.appendChild(cell4);
+                    row.appendChild(cell5);
+
+                    table.appendChild(row);
+                }
+                isExpanded = true;
+            }
+            else{
+                while(table.firstChild){
+                    table.removeChild(table.firstChild)
+                }
+            isExpanded = false;
+            }
+        }
     </script>
 </head>
 <body>
@@ -82,6 +167,16 @@
         <!-- Кнопка создания полупрозрачных блоков -->        
         <button onclick="addTrBlocks()">Создать полупрозрачные блоки</button>
         <div id="tr-blocks"></div>
+
+        <!-- Поле для для ввода числа и кнопка создания кругов -->
+        <input type="number" id="NumInp" value="5" placeholder="Ввод числа">
+        <button id="RedGreen" onclick="NumberInp()">Зеленый/Голубой</button>
+        <div id="circles"></div>
+
+        <!-- Кнопка для создания таблицы умножения -->
+        <button onclick="UmnTable()">Таблица умножения</button>
+        <table id="Umn-table"></table>
+
     </main>
 
     <footer>
