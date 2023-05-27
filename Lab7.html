@@ -152,7 +152,7 @@
         let stockPrices = [2016.40, 2026.00, 2036.20, 2048.20, 2045.00, 2223.20, 2263.00, 2260.00, 2223.60, 2321.00];
         let stockDates = ['12.05.2023', '15.05.2023', '16.05.2023', '17.05.2023', '18.05.2023', '19.05.2023', '22.05.2023', '23.05.2023', '24.05.2023', '25.05.2023'];
 
-        function showStockTable() {
+        function Kotirovka() {
             let table = document.getElementById('stock-table');
             let sredneeznach = document.getElementById('srednee-znach');
             let mminimum = document.getElementById('minimum');
@@ -195,8 +195,8 @@
 
                 let minPrice1 = Math.min(...stockPrices); // поиск наименьшего значение в массиве
                 let maxPrice1 = Math.max(...stockPrices); // поиск наивысшего значения в массиве
-                mminimum.innerText = "Минимальное значение стоимости акции: " + minPrice1.toFixed(2);
-                mmaximum.innerText = "Максимальное значение стоимости акции: " + maxPrice1.toFixed(2);
+                mminimum.innerText = "Минимальная стоимость акций: " + minPrice1.toFixed(2);
+                mmaximum.innerText = "Максимальная стоимость акций: " + maxPrice1.toFixed(2);
                 isExpanded = true;
             }
             else{
@@ -249,8 +249,8 @@
         <button onclick="UmnTable()">Таблица умножения</button>
         <table id="Umn-table"></table>
 
-        <!-- Кнопка для вывода катировок акций Яндекса -->
-        <button onclick="showStockTable()">Курс акций Яндекса</button>
+        <!-- Кнопка для вывода котировок акций Яндекса -->
+        <button onclick="Kotirovka()">Курс акций Яндекса</button>
         <table id="stock-table"></table>
         <p id="srednee-znach"></p>
         <p id="minimum"></p>

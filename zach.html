@@ -6,95 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Капинос Даниил Дмитриевич, ФБИ-12</title>
     <style>
-        label {
-            border: 2px solid;
-            background-color: aqua;
-        }
-        .Zn {
-            border: 2px solid;
-            border-color: black;
-            background-color: brown;
-            border-radius: 5%;
-        }
     </style>
     <script>
-        function Cifra() {
-            let inputA = document.getElementById('NumA');
-            x = parseInt(inputA.value);
-            x1 = parseInt(x/100);
-            y = String(x1);
-            x2 = x - x1 * 100;
-            alert(x2 + y);
+        // Функция для вывода числа
+        function Chislo() {
+            let Numa = document.getElementById('NumA');
+            let x = parseFloat(Numa.value);
+            if ((x<=0)){
+                alert (-x)
+            }
+            else if ((x>0) && (x<2)){
+                alert (x**2)
+            }
+            else if (x>=2){
+                alert (4)
+            }
         }
 
-        function Znach() {
-            let XX = document.getElementById('A');
-            let YY = document.getElementById('B');
-            xx = parseInt(XX.value);
-            yy = parseInt(YY.value);
-            if (xx == yy) {
-                alert(xx * xx);
-            }
-            else if (xx > yy) {
-                alert (xx - yy);
+        // Функция для расчета факториала
+        function factorial() {
+            let Numb = document.getElementById('NumB');
+            let y = parseFloat(Numb.value);
+            let Fac = 1;
+            if (((y%1) == 0) && (y>0)){
+                for (let i=1; i<=y; i++){
+                    Fac = Fac * i;
+                }
+                alert (Fac);
             }
             else {
-                alert(xx + yy);
-            } 
+                alert ('Введите натуральное число');
+            }
         }
 
-        function Bolsh() {
-            let AA = document.getElementById('A');
-            let YY = document.getElementById('B');
-            x = parseFloat(AA.value);
-            y = parseFloat(YY.value);
-            if (x > y) {
-                alert (x);
-            }
-            else {
-                alert (y);
-            }
-
-        }
-        function Arg() {
-            let one =  document.getElementById('NumB');
-            let two =  document.getElementById('NumC');
-            let three =  document.getElementById('NumD');
-
-            let one1 = parseInt(one.value);
-            let two1 = parseInt(two.value);
-            let three1 = parseInt(three.value);
-
-            let ttt=[];
-            for (let i=1; i<=three1; i++){
-                let result = one1+two1*(i-1);
-                ttt.push(result);
-            }
-
-            let output = document.getElementById('otp');
-            alert(ttt);
-
-        }
     </script>
 </head>
 <body>
     <main>
-        <label>Введите трехзначное число <input type="number" value="" id="NumA"></label>
-        <input type="button" value="Решить" onclick="Cifra()">
+        <!-- Кнопка для вывода числа -->
+        <label>Введите число <input type="number" value="" id="NumA"></label>
+        <input type="button" value="Решить" onclick="Chislo()">
 
-        <div class="Zn">
-            <label>Число A <input type="number" value="" id="A"></label>
-            <label>Число B <input type="number" value="" id="B"></label>
-            <input type="button" value="Решить" onclick="Bolsh()">
-        </div>
-
-        <label>Первое число:<input type="number" value="1" id="NumB"></label><br>
-        <label>Разность:<input type="number" value="2" id="NumC"></label><br>
-        <label>Кол-во элементов:<input type="number" value="3" id="NumD"></label><br>
-        <div>
-            <input type="button" value="Решить" onclick="Arg()">
-            <div id="otp"></div>
-        </div>
+        <!-- Кнопка для расчета факториала -->
+        <label>Факториал <input type="number" value="" id="NumB"></label>
+        <input type="button" value="Решить" onclick="factorial()">
 
     </main>
 </body>
