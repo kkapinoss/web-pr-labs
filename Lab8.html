@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капинос Даниил Дмитриевич. Курбатова Ангелина. Лабораторная №6</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="lab8.js"></script>
+    <style>
+        button{
+            background-color: rgb(60, 8, 248);
+            border-color: rgb(35, 204, 5);
+            border-radius: 2px;
+            color: rgb(36, 36, 36);
+            width: 150px;
+            height: 80px;
+            margin-left: 150px;
+        }
+        input{
+            width: 150px;
+            height: 40px;
+            background-color: rgb(35, 35, 35);
+            color: rgb(255, 255, 255);
+            border-color: rgb(255, 255, 255);
+        }
+        .textdays{
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+
+        }
+        .time{
+            text-align: end;
+            font-size: medium;
+        }
+    </style>
+<body onload="showDate()">
+    <header>
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
+    </header>
+    <main>
+        <div id="current-date"></div>
+        <br>
+        <div><label class="textdays">Дата рождения:<input type="date"></label></div>
+        <br>
+        <div><button onclick="showDaysCount()">Показать число дней</button></div>
+        <div class="textdays" id="days"></div>
+        <div>
+            <button onclick="cleanAll()">Очистить</button>
+        </div>
+    </main>
+    <footer>
+        &copy; Даниил Дмитриевич, Курбатова Ангелина, ФБИ-12, 2 курс, 2023г.
+    </footer>  
+</body>
+</html>

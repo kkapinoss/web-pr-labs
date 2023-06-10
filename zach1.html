@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капинос Даниил. Защита</title>
+    
+    <style>    
+    </style>
+
+    <script>
+        function xxx() {
+            let x = document.querySelector('input[type=number]');
+            x=x.value;
+            let znach = 0;
+            for (i=1; i<=x; i++) {
+                znach+=(2*i-1);
+                console.log(znach);
+            }
+            alert ('Квадрат числа ' +x+' равен '+znach)
+        }
+    </script>
+</head>
+<body>
+    <header></header>
+
+    <main>
+       <input class="chis" type="number">
+       <button onclick="xxx()">Вывести значение</button>
+    </main>
+
+    <footer></footer>
+    
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Капинос Даниил, ФБИ-12</title>
+    <style>
+        .bilet {
+            color: darkorange;
+            font-size: 18px;
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+
+        .block {
+            background: linear-gradient(rgb(52, 52, 52), rgb(0, 0, 0));
+            width: 600px;
+            height: 400px;
+            margin-left: 70px;
+        }
+
+        .knopka1 {
+            width: 100px;
+            height: 30px;
+            margin-top: 70px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            background-color: darkorange;
+            padding: 10px 15px;
+            text-shadow: 2px, 5px 4px white;
+            box-shadow: 2px 5px 5px black;
+
+        }
+
+        .knopka2 {
+            width: 100px;
+            height: 30px;
+            margin-top: 170px;
+            margin-left: 260px;
+            background-color: darkorange;
+            padding: 0px 15px;
+        }
+
+        .knopka2:hover {
+            font-size: 12px;
+            text-shadow: 10px 10px 10px black;
+            transition: 0.9s;
+        }
+
+        .knopka3 {
+            width: 80px;
+            height: 30px;
+            margin-top: 0px;
+            margin-left: 15px;
+        }
+
+        .knopka1:hover {
+            font-size: 12px;
+            text-shadow: 10px 10px 10px black;
+            transition: 0.9s;
+        }
+
+        .pp {
+            width: 600px;
+            height: 30px;
+            margin-left: 100px;
+            padding: 10px 10px;
+        }
+    </style>
+
+    <script>
+        function guess() {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+            // Дополнительная проверка
+            if(userNumber > 100) {
+                message.innerHTML = 'Лимит 100 превышен, введите число меньше';
+            }
+            else if (userNumber < 1) {
+                message.innerHTML = 'Попробуйте ввести число больше 1';
+            }
+            // Основная проверка
+            if(userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            }
+            else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            }
+            else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="bilet">
+        Билет №9. Калькулятор
+    </header>
+
+    <main>
+        <div class="block">
+
+            <div class="pp">
+            <div id="result"></div>
+            <button style="width: 350px; height: 20px;" onclick="guess()">Угадать</button>
+            <div id="result"></div>
+            </div>
+            
+
+            <div>
+            <input type="button" value="Расчитать" class="knopka1">
+            </div>
+
+            <div class="knopka3">
+            <!-- Поле для для ввода числа и кнопка создания кругов -->
+            <input type="number" id="NumInp" value="1" min="1" max="999" placeholder="Ввод числа">
+            </div>        
+
+            <div>
+            <input type="button" value="Сбросить" class="knopka2">
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    
+</body>
+</html>
